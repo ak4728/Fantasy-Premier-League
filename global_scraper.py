@@ -8,6 +8,7 @@ def parse_data():
     """
     print("Getting data")
     data = get_data()
+    print(data)
     season = '2019-20'
     base_filename = 'data/' + season + '/'
     print("Parsing summary data")
