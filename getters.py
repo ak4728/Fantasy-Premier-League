@@ -5,7 +5,7 @@ import time
 def get_data():
     """ Retrieve the fpl player data from the hard-coded url
     """
-    response = requests.get("https://fantasy.premierleague.com/api/bootstrap-static")
+    response = requests.get("https://fantasy.premierleague.com/api/bootstrap-static/")
     if response.status_code != 200:
         raise Exception("Response was code " + str(response.status_code))
     responseStr = response.text
@@ -19,7 +19,7 @@ def get_individual_player_data(player_id):
         player_id (int): ID of the player whose data is to be retrieved
     """
     base_url = "https://fantasy.premierleague.com/api/element-summary/"
-    full_url = base_url + str(player_id)
+    full_url = base_url + str(player_id) + '/'
     response = ''
     while response == '':
         try:
